@@ -2,6 +2,8 @@
 
 ## Python :
 
+Pour lancer : python __main__.py
+
 Quels sont les éléments à considérer pour faire évoluer votre code afin qu’il puisse gérer de grosses 
 volumétries de données (fichiers de plusieurs To ou millions de fichiers par exemple) ?
 
@@ -18,16 +20,19 @@ telles volumétries
 
 ## SQL :
 
+Fait sur MS SQL
+
 1 - 
 ```sql
-SELECT date, prod_price*prod_qty AS ventes FROM transaction ORDER BY date
+SELECT date, SUM(prod_price*prod_qty) AS ventes FROM transactions WHERE date BETWEEN '2019-01-01' AND '2019-12-31' 
+GROUP BY date ORDER BY date
 ```
 2- 
 
 ```sql
 SELECT * FROM
 (
-  SELECT client_id, prod_qty*prod_price AS ventes, product_type FROM transaction JOIN product_nomenclature 
+  SELECT client_id, prod_qty*prod_price AS ventes, product_type FROM transactions JOIN product_nomenclature 
   ON transactions.prop_id=product_nomenclature.product_id WHERE date BETWEEN '2019-01-01' AND '2019-12-31'
 )t
 PIVOT(

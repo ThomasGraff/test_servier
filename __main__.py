@@ -7,9 +7,9 @@ from transformation import mention_article, all_mentions
 
 def main():
     # Load
-    clinical_trials = pd.read_csv("./clinical_trials.csv")
-    drugs = pd.read_csv("./drugs.csv")
-    pubmed = pd.read_csv("./pubmed.csv")
+    clinical_trials = pd.read_csv("./données/clinical_trials.csv")
+    drugs = pd.read_csv("./données/drugs.csv")
+    pubmed = pd.read_csv("./données/pubmed.csv")
 
     # Clean data
     drugs = clean_data(drugs)

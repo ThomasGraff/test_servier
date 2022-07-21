@@ -13,6 +13,7 @@ def json_convertion(df, path):
         .groupby("drug")["type", "data"]
         .apply(lambda x: x.set_index("type")["data"].to_dict())
     )
-    d.to_json(path)
+    d.to_json(path, indent=4)
+    
 
     return True
