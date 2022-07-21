@@ -18,13 +18,16 @@ telles volumétries
 
 ## SQL :
 
-1 - SELECT date, prod_price*prod_qty AS ventes FROM transaction ORDER BY date
-
+1 - 
+```sql
+SELECT date, prod_price*prod_qty AS ventes FROM transaction ORDER BY date
+```
 2- 
 
+```sql
 SELECT * FROM
 (
-  SELECT client_id, prod_qty*prod_price as ventes, product_type FROM transaction JOIN product_nomenclature 
+  SELECT client_id, prod_qty*prod_price AS ventes, product_type FROM transaction JOIN product_nomenclature 
   ON transactions.prop_id=product_nomenclature.product_id WHERE date BETWEEN '2019-01-01' AND '2019-12-31'
 )t
 PIVOT(
@@ -33,3 +36,4 @@ PIVOT(
         [MEUBLE], 
         [DECO])
 ) AS ventes_type;
+```
