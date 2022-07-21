@@ -2,7 +2,7 @@
 
 ## Python :
 
-Pour lancer : python __main__.py
+Pour lancer : python \_\_main\_\_.py
 
 Quels sont les éléments à considérer pour faire évoluer votre code afin qu’il puisse gérer de grosses 
 volumétries de données (fichiers de plusieurs To ou millions de fichiers par exemple) ?
