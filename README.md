@@ -7,15 +7,15 @@ Pour lancer : python \_\_main\_\_.py
 Quels sont les éléments à considérer pour faire évoluer votre code afin qu’il puisse gérer de grosses 
 volumétries de données (fichiers de plusieurs To ou millions de fichiers par exemple) ?
 
-- Changer le format d'input
-- Ne pas utiliser de produit cartésien
-- Utiliser un système distribué
+- Changer le format d'input afin d'avoir un format lisible plus rapidement, et pouvant être compressé.
+- Ne pas utiliser de produit cartésien car ce dernier est peut prendre du temps et surtout beaucoup de mémoire. Il faut l'appliquer sur des dataframes de taille raisonnable ou bien ne plus l'utiliser.
+- Utiliser un système distribué afin de répartir les taches sur différentes machines. Cela permet d'accélérer le traitement sûr de nombreuses données.
 
 Pourriez-vous décrire les modifications qu’il faudrait apporter, s’il y en a, pour prendre en considération de 
 telles volumétries 
 
-- En première étape on pourrait changer le format des input de csv à Parquet, pour rendre plus efficient le traitement.
-- Deuxiemement, on peut remplacer Pandas par Spark ou Dask afin d'avoir un système distribué.
+- En première étape on pourrait changer le format des inputs de CSV à Parquet. Le format CSV n'est pas conseillé pour les échanges de données. Les données ne sont pas compressées, le schéma n'est pas "enforced", et la lecture d'un CSV implique de lire toutes les colonnes de toutes les lignes, contrairement à Parquet, ce qui accélère le traitement.
+- Deuxièmement, on peut remplacer Pandas par Spark, Dask ou une autre solution afin de distribuer notre traitement sur plusieurs noeuds. Koalas serait la solution la moins impactant dans le code de ce projet et ne nécessiterait que de changer de suffixe toutes les fonctions Pandas.
 
 
 ## SQL :
