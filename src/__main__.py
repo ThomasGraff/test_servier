@@ -23,6 +23,7 @@ def main():
 
     # Convert data to json
     path = "data.json"
+    print(type(path))
     json_convertion(df_final, path)
 
     # Journal qui mentionne le plus de médicaments différents

@@ -8,7 +8,7 @@ Quels sont les éléments à considérer pour faire évoluer votre code afin qu�
 volumétries de données (fichiers de plusieurs To ou millions de fichiers par exemple) ?
 
 - Changer le format d'input afin d'avoir un format lisible plus rapidement, et pouvant être compressé.
-- Ne pas utiliser de produit cartésien car ce dernier est peut prendre du temps et surtout beaucoup de mémoire. Il faut l'appliquer sur des dataframes de taille raisonnable ou bien ne plus l'utiliser.
+- Ne pas utiliser de produit cartésien car ce dernier peut prendre du temps et surtout beaucoup de mémoire. Il faut l'appliquer sur des dataframes de taille raisonnable ou bien ne plus l'utiliser.
 - Utiliser un système distribué afin de répartir les taches sur différentes machines. Cela permet d'accélérer le traitement sûr de nombreuses données.
 
 Pourriez-vous décrire les modifications qu’il faudrait apporter, s’il y en a, pour prendre en considération de 

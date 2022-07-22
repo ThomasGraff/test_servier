@@ -1,3 +1,4 @@
+from typing import Type
 import pandas as pd
 
 
@@ -8,7 +9,8 @@ def clean_data(df):
     Modifier les noms de colonnes pour uniformiser
     Modifier les string avec des erreurs si nécessaire
     """
-    assert isinstance(df, pd.DataFrame)
+    if not isinstance(df, pd.DataFrame):
+        raise TypeError("Input is not a pandas Dataframe")
 
     df = df.drop(["id", "atccode"], axis=1, errors="ignore")
 
